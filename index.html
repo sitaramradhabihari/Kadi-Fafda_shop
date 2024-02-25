@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap"/>
+</head>
+<body>
+    <header>
+        <h1 id="top">Online</h1>
+        <h1 id="top1">Kadi fafda Shop</h1>
+    </header>
+    <hr>
+    <nav id="navbar">
+        <img src="fafdaman.png" style="width: 78px; height: auto;">
+        <ul id="navcontent">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div id="container1">
+        <div id="row1">
+            Welcome to online Kadi Fafda shop.
+        </div>
+        <div id="container3">
+            <div id="row2">
+                <button class="btn"><a href="Menu.html">Menu</a></button>
+            </div>
+            <div id="row3">
+                <button class="btn"><a href="specials.html">Specials</a></button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h1 id="top3">Featured Products</h1>
+    <div id="container4">
+        <div id="row4">
+            <button class="btn" onclick="redirectToWhatsApp()">ORDER NOW</button>
+        </div>
+        <div id="row5">
+            <button class="btn" onclick="redirectToWhatsApp()">ORDER NOW</button>
+        </div>
+        <div id="row6">
+            <button class="btn" onclick="redirectToWhatsApp()">ORDER NOW</button>
+        </div>
+    </div>
+    <footer>Copyright © 2023-2024 Kadi Fafda Shop. All rights are reserved.</footer>
+    <script src="script.js"></script>
+    <script>
+        function redirectToWhatsApp() {
+            var phoneNumber = "7610198871";
+            var whatsappLink = "https://wa.me/" + phoneNumber;
+            window.location.href = whatsappLink;
+        }
+    </script>
+</body>
+</html>

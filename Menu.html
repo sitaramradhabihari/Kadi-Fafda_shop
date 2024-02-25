@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-image: linear-gradient(45deg, #ffcc00, #ff9900);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s infinite alternate;
+            padding: 15px;
+            text-align: center;
+            color: #fff;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: right;
+            display: block;
+            color: #f2f2f2;
+            text-align: right;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .menu-item:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+        }
+
+        .item-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .item-description {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .item-price {
+            font-weight: bold;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+
+        .item-image {
+            width: 30%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .add-to-cart-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .add-to-cart-button:hover {
+            background-color: #0056b3;
+        }
+
+        .add-to-cart-button:active {
+            transform: scale(0.95);
+        }
+
+        .quantity-input {
+            width: 40px;
+            height: 20px;
+            margin-left: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        #cart {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .order-now-button {
+            background-color: #28a745; /* Green color */
+            color: #fff;
+            border: lawngreen;
+            border-radius: 4px;
+            padding: 5px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .order-now-button:hover {
+            background-color: #218838; /* Darker green color on hover */
+        }
+
+        .order-now-button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+
+<body>
+    
+    <header>
+        <h1>Restaurant Menu</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    
+    <div class="menu-item">
+        <img class="item-image" src="chai_samosa.jpg" alt="Chai Samosa">
+        <div class="item-name">Chai Samosa</div>
+        <div class="item-description">"चाय और समोसा, यह दोनों मिलकर हैं मिठास का राज। ☕🍴"</div>
+        <div class="item-price">80 rs</div>
+        <div class="cart-button">
+            <button class="add-to-cart-button">Add to Cart</button>
+            <input class="quantity-input" type="number" min="1" max="10" value="1">
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img class="item-image" src="bhel_puri.jpg" alt="Bhel Puri">
+        <div class="item-name">Bhel Puri</div>
+        <div class="item-description">"भेल पुरी - मिठी-मिठी बातें, चटपटा स्वाद!"</div>
+        <div class="item-price">60 rs</div>
+        <div class="cart-button">
+            <button class="add-to-cart-button">Add to Cart</button>
+            <input class="quantity-input" type="number" min="1" max="10" value="1">
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img class="item-image" src="dosa.jpeg" alt="Dhosa Sambar">
+        <div class="item-name">Dhosa Sambar</div>
+        <div class="item-description">"ढोसा सांबर - स्वाद की"</div>
+        <div class="item-price">140 rs</div>
+        <div class="cart-button">
+            <button class="add-to-cart-button">Add to Cart</button>
+            <input class="quantity-input" type="number" min="1" max="10" value="1">
+            
+                <div id="cart"></div>
+                <div style="text-align: center; margin-top: 10px;">
+                    <button class="order-now-button">Order Now</button>
+                </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
